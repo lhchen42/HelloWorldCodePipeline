@@ -44,16 +44,16 @@ Parameters:
     Default: "us-east-1"
   TestingStackName:
     Type: String
-    Default: "sam-app-dev"
+    Default: "sam-app-dev-stack"
   TestingPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-1INXKA9Q754TL"
+    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-1BD2BM2JF9SK0"
   TestingCloudFormationExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-1RA4CJ4698TBJ"
+    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-1VA150EFNY5BR"
   TestingArtifactBucket:
     Type: String
-    Default: "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-g4fpi5hf4dq1"
+    Default: "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-16dnol9triyhn"
   TestingImageRepository:
     Type: String
     # If there are functions with "Image" PackageType in your template,
@@ -65,16 +65,16 @@ Parameters:
     Default: "us-east-1"
   ProdStackName:
     Type: String
-    Default: "sam-app-prod"
+    Default: "sam-app-prod-stack"
   ProdPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-DZTBP778E115"
+    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-11G5W7UDL640O"
   ProdCloudFormationExecutionExeRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-Z46GE2UU8HUZ"
+    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-XGR8KBCP3FKK"
   ProdArtifactBucket:
     Type: String
-    Default: "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-xkp4nw3zm7tb"
+    Default: "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-5b9nnzmhmu3t"
   ProdImageRepository:
     Type: String
     # If there are functions with "Image" PackageType in your template,
