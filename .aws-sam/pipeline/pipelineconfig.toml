@@ -2,22 +2,22 @@ version = 0.1
 [default]
 [default.pipeline_bootstrap]
 [default.pipeline_bootstrap.parameters]
-pipeline_user = "arn:aws:iam::746606725297:user/aws-sam-cli-managed-dev-lin-pipeline-PipelineUser-1UCYBK6PR69Z7"
+pipeline_user = "arn:aws:iam::732499942675:user/aws-sam-cli-managed-dev-lin-pipeline-PipelineUser-59MPQEGIGCS2"
 
 [dev-lin]
 [dev-lin.pipeline_bootstrap]
 [dev-lin.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-1BD2BM2JF9SK0"
-cloudformation_execution_role = "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-1VA150EFNY5BR"
-artifacts_bucket = "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-16dnol9triyhn"
+pipeline_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-R4D9X32E8HXI"
+cloudformation_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-137FYW111A866"
+artifacts_bucket = "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-tdry5en5zi1s"
 image_repository = ""
 region = "us-east-1"
 
 [prod-lin]
 [prod-lin.pipeline_bootstrap]
 [prod-lin.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::746606725297:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-11G5W7UDL640O"
-cloudformation_execution_role = "arn:aws:iam::746606725297:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-XGR8KBCP3FKK"
-artifacts_bucket = "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-5b9nnzmhmu3t"
+pipeline_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-16C629N32KVZO"
+cloudformation_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-6GVSKGFRMAVO"
+artifacts_bucket = "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-4kn6etj479li"
 image_repository = ""
 region = "us-east-1"

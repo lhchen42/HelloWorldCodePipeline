@@ -44,16 +44,16 @@ Parameters:
     Default: "us-east-1"
   TestingStackName:
     Type: String
-    Default: "sam-app-dev-stack"
+    Default: "sam-app-dev-lin"
   TestingPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-1BD2BM2JF9SK0"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-R4D9X32E8HXI"
   TestingCloudFormationExecutionRole:
     Type: String
-    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-1VA150EFNY5BR"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-137FYW111A866"
   TestingArtifactBucket:
     Type: String
-    Default: "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-16dnol9triyhn"
+    Default: "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-tdry5en5zi1s"
   TestingImageRepository:
     Type: String
     # If there are functions with "Image" PackageType in your template,
@@ -65,16 +65,16 @@ Parameters:
     Default: "us-east-1"
   ProdStackName:
     Type: String
-    Default: "sam-app-prod-stack"
+    Default: "sam-app-prod-lin"
   ProdPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-11G5W7UDL640O"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-16C629N32KVZO"
   ProdCloudFormationExecutionExeRole:
     Type: String
-    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-XGR8KBCP3FKK"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-6GVSKGFRMAVO"
   ProdArtifactBucket:
     Type: String
-    Default: "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-5b9nnzmhmu3t"
+    Default: "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-4kn6etj479li"
   ProdImageRepository:
     Type: String
     # If there are functions with "Image" PackageType in your template,
