@@ -44,16 +44,16 @@ Parameters:
     Default: "us-east-1"
   TestingStackName:
     Type: String
-    Default: "HelloWorldCodePipelineDevStack"
+    Default: "sam-app-dev"
   TestingPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-pipe-PipelineExecutionRole-18VGQIVG2AII9"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-1INXKA9Q754TL"
   TestingCloudFormationExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionR-1J3MC5A7QWMG4"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-1RA4CJ4698TBJ"
   TestingArtifactBucket:
     Type: String
-    Default: "aws-sam-cli-managed-dev-pipeline-artifactsbucket-tlbijv8cqnf4"
+    Default: "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-g4fpi5hf4dq1"
   TestingImageRepository:
     Type: String
     # If there are functions with "Image" PackageType in your template,
@@ -65,16 +65,16 @@ Parameters:
     Default: "us-east-1"
   ProdStackName:
     Type: String
-    Default: "HelloWorldCodePipelineProdStack"
+    Default: "sam-app-prod"
   ProdPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-1J4UU6JAA22FZ"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-DZTBP778E115"
   ProdCloudFormationExecutionExeRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-QLFXL9TUESOS"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-Z46GE2UU8HUZ"
   ProdArtifactBucket:
     Type: String
-    Default: "aws-sam-cli-managed-prod-pipeline-artifactsbucket-1h4hcnar2qq5h"
+    Default: "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-xkp4nw3zm7tb"
   ProdImageRepository:
     Type: String
     # If there are functions with "Image" PackageType in your template,
