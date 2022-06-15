@@ -44,16 +44,16 @@ Parameters:
     Default: "us-east-1"
   TestingStackName:
     Type: String
-    Default: "sam-app-dev-lin"
+    Default: "HelloWorldCodePipelineDevStack"
   TestingPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-R4D9X32E8HXI"
+    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-pipe-PipelineExecutionRole-47016RGZFK1"
   TestingCloudFormationExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-137FYW111A866"
+    Default: "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionR-1ET2OQ1IVWYSA"
   TestingArtifactBucket:
     Type: String
-    Default: "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-tdry5en5zi1s"
+    Default: "aws-sam-cli-managed-dev-pipeline-artifactsbucket-1cdyv6aqzxhaj"
   TestingImageRepository:
     Type: String
     # If there are functions with "Image" PackageType in your template,
@@ -65,16 +65,16 @@ Parameters:
     Default: "us-east-1"
   ProdStackName:
     Type: String
-    Default: "sam-app-prod-lin"
+    Default: "HelloWorldCodePipelineProdStack"
   ProdPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-16C629N32KVZO"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-tv-prod-PipelineExecutionRole-10KVYFT9T831G"
   ProdCloudFormationExecutionExeRole:
     Type: String
-    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-6GVSKGFRMAVO"
+    Default: "arn:aws:iam::732499942675:role/aws-sam-cli-managed-tv-pr-CloudFormationExecutionR-1N1IF5N19HI5O"
   ProdArtifactBucket:
     Type: String
-    Default: "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-4kn6etj479li"
+    Default: "aws-sam-cli-managed-tv-prod-pipel-artifactsbucket-j1ksxa3ecmmu"
   ProdImageRepository:
     Type: String
     # If there are functions with "Image" PackageType in your template,
@@ -176,18 +176,18 @@ Resources:
               RunOrder: 2
 
         # Uncomment and modify the following step for running the unit-tests
-        # - Name: UnitTest
-        #   Actions:
-        #     - Name: UnitTest
-        #       ActionTypeId:
-        #         Category: Build
-        #         Owner: AWS
-        #         Provider: CodeBuild
-        #         Version: "1"
-        #       Configuration:
-        #         ProjectName: !Ref CodeBuildProjectUnitTest
-        #       InputArtifacts:
-        #         - Name: SourceCodeAsZip
+        - Name: UnitTest
+          Actions:
+            - Name: UnitTest
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Provider: CodeBuild
+                Version: "1"
+              Configuration:
+                ProjectName: !Ref CodeBuildProjectUnitTest
+              InputArtifacts:
+                - Name: SourceCodeAsZip
 
         - !If
           - IsFeatureBranchPipeline
@@ -426,7 +426,7 @@ Resources:
                   - "codebuild:BatchGetBuilds"
                 Resource:
                   # Uncomment the line below to enable the unit-tests
-                  # - !GetAtt CodeBuildProjectUnitTest.Arn
+                  - !GetAtt CodeBuildProjectUnitTest.Arn
                   - !If
                     - IsFeatureBranchPipeline
                     - !GetAtt CodeBuildProjectBuildAndDeployFeature.Arn
@@ -536,19 +536,19 @@ Resources:
                     aws:ResourceTag/Role: pipeline-execution-role
 
   # Uncomment and modify the following step for running the unit-tests
-  # CodeBuildProjectUnitTest:
-  #   Type: AWS::CodeBuild::Project
-  #   Properties:
-  #     Artifacts:
-  #       Type: CODEPIPELINE
-  #     Environment:
-  #       Type: LINUX_CONTAINER
-  #       ComputeType: BUILD_GENERAL1_SMALL
-  #       Image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
-  #     ServiceRole: !GetAtt CodeBuildServiceRole.Arn
-  #     Source:
-  #       Type: CODEPIPELINE
-  #       BuildSpec: pipeline/buildspec_unit_test.yml
+  CodeBuildProjectUnitTest:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
+      ServiceRole: !GetAtt CodeBuildServiceRole.Arn
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: pipeline/buildspec_unit_test.yml
 
   CodeBuildProjectBuildAndDeployFeature:
     Condition: IsFeatureBranchPipeline

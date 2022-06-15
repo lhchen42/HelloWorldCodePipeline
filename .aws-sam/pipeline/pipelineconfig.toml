@@ -2,22 +2,31 @@ version = 0.1
 [default]
 [default.pipeline_bootstrap]
 [default.pipeline_bootstrap.parameters]
-pipeline_user = "arn:aws:iam::732499942675:user/aws-sam-cli-managed-dev-lin-pipeline-PipelineUser-59MPQEGIGCS2"
+pipeline_user = "arn:aws:iam::746606725297:user/aws-sam-cli-managed-dev-pipeline-reso-PipelineUser-113YE10GI9PZM"
 
-[dev-lin]
-[dev-lin.pipeline_bootstrap]
-[dev-lin.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-lin-PipelineExecutionRole-R4D9X32E8HXI"
-cloudformation_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-dev-l-CloudFormationExecutionR-137FYW111A866"
-artifacts_bucket = "aws-sam-cli-managed-dev-lin-pipel-artifactsbucket-tdry5en5zi1s"
+[dev]
+[dev.pipeline_bootstrap]
+[dev.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-pipe-PipelineExecutionRole-47016RGZFK1"
+cloudformation_execution_role = "arn:aws:iam::746606725297:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionR-1ET2OQ1IVWYSA"
+artifacts_bucket = "aws-sam-cli-managed-dev-pipeline-artifactsbucket-1cdyv6aqzxhaj"
 image_repository = ""
 region = "us-east-1"
 
-[prod-lin]
-[prod-lin.pipeline_bootstrap]
-[prod-lin.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-lin-PipelineExecutionRole-16C629N32KVZO"
-cloudformation_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-6GVSKGFRMAVO"
-artifacts_bucket = "aws-sam-cli-managed-prod-lin-pipe-artifactsbucket-4kn6etj479li"
+[prod]
+[prod.pipeline_bootstrap]
+[prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::746606725297:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-O3EU8SYSJPVK"
+cloudformation_execution_role = "arn:aws:iam::746606725297:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-4ZR4CFMUMN3K"
+artifacts_bucket = "aws-sam-cli-managed-prod-pipeline-artifactsbucket-n2ca44jgrpvj"
+image_repository = ""
+region = "us-east-1"
+
+[tv-prod]
+[tv-prod.pipeline_bootstrap]
+[tv-prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-tv-prod-PipelineExecutionRole-10KVYFT9T831G"
+cloudformation_execution_role = "arn:aws:iam::732499942675:role/aws-sam-cli-managed-tv-pr-CloudFormationExecutionR-1N1IF5N19HI5O"
+artifacts_bucket = "aws-sam-cli-managed-tv-prod-pipel-artifactsbucket-j1ksxa3ecmmu"
 image_repository = ""
 region = "us-east-1"
