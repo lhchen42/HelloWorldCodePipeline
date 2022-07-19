@@ -266,7 +266,7 @@ Resources:
           - IsMainBranchPipeline
           - Name: DeployProd
             Actions:
-              uncomment this to have a manual approval step before deployment to production
+              # uncomment this to have a manual approval step before deployment to production
               - Name: ManualApproval
                 ActionTypeId:
                  Category: Approval
@@ -274,6 +274,7 @@ Resources:
                  Provider: Manual
                  Version: "1"
                 RunOrder: 1
+              # comment end here
               - Name: DeployProd
                 ActionTypeId:
                   Category: Build
