@@ -9,6 +9,8 @@ phases:
   build:
     commands:
       - . ./assume-role.sh ${ENV_PIPELINE_EXECUTION_ROLE} deploy
+      # publish new version before deploy
+      - aws lambda publish-version --function-name arn:aws:lambda:us-east-1:746606725297:function:HelloWorldCodePipelineDevStack-HelloWorldFunction-Q63Jr8Kv71c8
       - sam deploy --stack-name ${ENV_STACK_NAME}
                     --template ${ENV_TEMPLATE}
                     --capabilities CAPABILITY_IAM
